@@ -1,0 +1,101 @@
+.header-container {
+  background-color: #2c364c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom-style: none;
+}
+.header-logo {
+  width: 100px;
+}
+.middle-contaier {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  border-bottom-style: none;
+  border-style: none;
+  text-decoration: none;
+}
+.header-list-item {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  border-bottom-style: none;
+  border-style: none;
+  text-decoration: none;
+}
+.header-btn {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+  background-color: #4f46e5;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .header-container {
+    display: none;
+  }
+  .header-mobile-container {
+    background-color: #2c364c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom-style: none;
+  }
+  .icon-1 {
+    color: #f1f5f9;
+    width: 30px;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .icon-2 {
+    color: #f1f5f9;
+    width: 30px;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .icon-3 {
+    color: #f1f5f9;
+    width: 30px;
+    font-size: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .header-btn {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    color: #ffffff;
+    background-color: transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 767px) {
+  .header-mobile-container {
+    display: none;
+  }
+}

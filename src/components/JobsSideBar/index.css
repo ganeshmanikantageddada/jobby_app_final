@@ -1,0 +1,89 @@
+.sidebar-container {
+}
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  border-radius: 25px;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+.profile {
+}
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #6366f1;
+}
+.short-bio {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #2c364c;
+}
+hr {
+  background-color: #6366f1;
+}
+
+.employment-heading {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 17px;
+  color: #f1f5f9;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.employment-input {
+  background-color: #6366f1;
+  cursor: pointer;
+}
+
+.employment-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.employment-list-item {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.employment-para {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 15px;
+  color: #f1f5f9;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.salaryRanges-heading {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 17px;
+  color: #f1f5f9;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.salaryRanges-list {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.salaryRanges-input {
+  background-color: #6366f1;
+  cursor: pointer;
+}
+.salaryRanges-list-item {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.salaryRanges-para {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 15px;
+  color: #f1f5f9;
+  margin-left: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.jh-container {
+}
+.search-container {
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.js-input {
+  background-color: #000000;
+  color: #2c364c;
+  border: 1px solid #b6c5ff;
+  outline: none;
+  border-right: 1px solid #000000;
+  height: 35px;
+  padding: 10px;
+  width: 80%;
+}
+.search-icon {
+  color: #ffffff;
+}
+.icon-container {
+  text-align: center;
+  background-color: #202020;
+  width: 50px;
+  border: 1px solid #b6c5ff;
+  border-left: 1px solid #000000;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

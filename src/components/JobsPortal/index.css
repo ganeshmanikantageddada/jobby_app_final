@@ -1,0 +1,86 @@
+.job-portal-container {
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.job-portal-logo-container {
+  display: flex;
+  align-items: center;
+}
+.job-portal-logo {
+  width: 50px;
+  height: 50px;
+}
+.job-portal-role-container {
+  margin-left: 10px;
+}
+.job-portal-role {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.job-portal-icon {
+  color: #fbbf24;
+  margin-right: 5px;
+}
+.job-portal-rating {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.job-portal-salary-container {
+  display: flex;
+  justify-content: space-between;
+}
+.salary-part-1 {
+  display: flex;
+  align-items: center;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.location-icon {
+  color: #f1f5f9;
+  margin-right: 5px;
+}
+.job-portal-location {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-right: 5px;
+}
+.package {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.job-portal-description-heading {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.job-portal-description {
+  font-size: 17px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
