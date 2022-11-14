@@ -61,6 +61,26 @@
     margin-top: 20px;
     cursor: pointer;
   }
+  ..nothing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nothing-img {
+    width: 40%;
+  }
+  .nothing-heading {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #ffffff;
+  }
+  .nothing-para {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #ffffff;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -115,5 +135,25 @@
     padding: 4px;
     margin-top: 20px;
     cursor: pointer;
+  }
+  .nothing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nothing-img {
+    width: 40%;
+  }
+  .nothing-heading {
+    font-size: 25px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #ffffff;
+  }
+  .nothing-para {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    color: #ffffff;
   }
 }

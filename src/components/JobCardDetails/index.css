@@ -1,0 +1,66 @@
+.single-card-container {
+  background-color: #121212;
+}
+.share-container {
+  display: flex;
+  align-items: center;
+}
+.details-description-link {
+  display: flex;
+  justify-content: space-between;
+}
+.link {
+  margin-left: 5px;
+}
+.single-heading {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.skills-list-container {
+}
+.skills-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 0px;
+  flex-wrap: wrap;
+}
+.skills-container {
+  display: flex;
+  width: 200px;
+  align-items: center;
+}
+.skills-img {
+  width: 40px;
+  height: 50px;
+}
+.skills-para {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+  margin-left: 5px;
+}
+.life-at-heading {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.life-at-container {
+  display: flex;
+  justify-content: space-between;
+}
+.life-at-para {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.life2-image {
+  width: 200px;
+  margin-left: 5px;
+}

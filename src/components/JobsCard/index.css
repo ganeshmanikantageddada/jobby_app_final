@@ -1,0 +1,24 @@
+.list-of-single-container {
+  background-color: #121212;
+  padding: 20px;
+}
+.similar-heading {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #f1f5f9;
+  margin-bottom: 15px;
+}
+.silimar-job-list {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0px;
+  flex-wrap: wrap;
+}
+.loadd-contaier {
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

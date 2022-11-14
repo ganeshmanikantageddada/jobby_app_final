@@ -31,7 +31,7 @@ class LoginForm extends Component {
 
     if (response.ok === true) {
       const {history} = this.props
-      Cookies.set('jwt_token', data.jwt_token, {expires: 30})
+      Cookies.set('jwt_token', data.jwt_token, {expires: 30, path: '/'})
       history.replace('/')
 
       this.setState({warning: false, username: '', password: ''})

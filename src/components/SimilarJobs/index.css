@@ -1,0 +1,23 @@
+.similar-job-portal-container {
+  background-color: #202020;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 200px;
+  margin-right: 10px;
+}
+.similar-job-portal-description-heading {
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+.similar-job-portal-description {
+  font-size: 10px;
+  font-weight: 400;
+  font-family: 'Roboto';
+  color: #ffffff;
+}

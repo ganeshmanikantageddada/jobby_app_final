@@ -18,16 +18,29 @@ const listToArrange = {
 }
 
 class Jobs extends Component {
-  state = {jobsLIst: [], loader: false, apiCall: listToArrange.initial}
+  state = {
+    jobsLIst: [],
+    loader: false,
+    apiCall: listToArrange.initial,
+    searchOption: '',
+    empParameter: '',
+    salParameter: '',
+  }
 
   componentDidMount() {
     this.getDetails()
   }
 
+  retring = () => {
+    this.setState({loader: false})
+    this.getDetails()
+  }
+
   getDetails = async () => {
+    const {searchOption, empParameter, salParameter} = this.state
     this.setState({loader: true, apiCall: listToArrange.success})
     const jwtToken = Cookies.get('jwt_token')
-    const apiUrl = 'https://apis.ccbp.in/jobs'
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${empParameter}&minimum_package=${salParameter}&search=${searchOption}`
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -60,6 +73,47 @@ class Jobs extends Component {
     }
   }
 
+  searchingDone = value => {
+    this.setState({searchOption: value}, this.getDetails)
+  }
+
+  onEmploymentChnage = value => {
+    this.setState({empParameter: value}, this.getDetails)
+  }
+
+  onSalaryChange = value => {
+    this.setState({salParameter: value}, this.getDetails)
+  }
+
+  onZeroList = () => {
+    const {jobsLIst} = this.state
+    console.log(jobsLIst.length)
+
+    return (
+      <ul className="jobs-portal-list">
+        {jobsLIst.map(item => {
+          if (item.length === 0) {
+            return (
+              <div className="nothing-container">
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+                  alt="no jobs"
+                  className="nothing-img"
+                />
+                <h1 className="nothing-heading">No Jobs Found</h1>
+                <p className="nothing-para">
+                  We could Not Find Any Jobs.Try Other Filters
+                </p>
+              </div>
+            )
+          }
+
+          return <JobsPortal list={item} key={item.id} />
+        })}
+      </ul>
+    )
+  }
+
   onSuccess = () => {
     const {loader, jobsLIst} = this.state
 
@@ -68,10 +122,13 @@ class Jobs extends Component {
       <>
         <div className="jobs-container">
           <div className="jobs-left-container">
-            <JobsSideBar />
+            <JobsSideBar
+              onEmploymentChnage={this.onEmploymentChnage}
+              onSalaryChange={this.onSalaryChange}
+            />
           </div>
           <div className="jobs-right-container">
-            <JobsHeader />
+            <JobsHeader searchingDone={this.searchingDone} />
             <div className="jobs-portal">
               {loader ? (
                 <div className={styling}>
@@ -109,11 +166,7 @@ class Jobs extends Component {
                   />
                 </div>
               ) : (
-                <ul className="jobs-portal-list">
-                  {jobsLIst.map(item => (
-                    <JobsPortal list={item} key={item.id} />
-                  ))}
-                </ul>
+                this.onZeroList()
               )}
             </div>
           </div>
@@ -169,7 +222,11 @@ class Jobs extends Component {
                     We cannot seem to find the page you are looking for.
                   </p>
                   <div>
-                    <button type="button" className="jobs-failure-btn">
+                    <button
+                      type="button"
+                      className="jobs-failure-btn"
+                      onClick={this.retring}
+                    >
                       Retry
                     </button>
                   </div>

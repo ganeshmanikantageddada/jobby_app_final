@@ -1,13 +1,36 @@
 import {Component} from 'react'
 
+import Loader from 'react-loader-spinner'
+
 import Cookies from 'js-cookie'
 
 import JobsCardDetails from '../JobCardDetails/index'
 
+import SimilarJobs from '../SimilarJobs/index'
+
+import Header from '../Header'
+
+import './index.css'
+
 class JobsCard extends Component {
-  state = {renderList: []}
+  state = {
+    convertedJObDetails: [],
+    lifeAtCompanyList: [],
+    skillsList: [],
+    similarJobsList: [],
+    load: true,
+    onErr: false,
+  }
 
   componentDidMount() {
+    this.getDetails()
+  }
+
+  onagain = () => {
+    this.setState({
+      load: true,
+      onErr: false,
+    })
     this.getDetails()
   }
 
@@ -27,8 +50,6 @@ class JobsCard extends Component {
     }
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(data)
-    console.log(response)
     const convertedData = {
       jobDetails: data.job_details,
       similarJobs: data.similar_jobs,
@@ -51,7 +72,7 @@ class JobsCard extends Component {
       description: convertedJObDetails.lifeAtCompany.description,
       imageUrl: convertedJObDetails.lifeAtCompany.image_url,
     }
-    const list2 = [convertedJObDetails.skills]
+    const list2 = convertedJObDetails.skills
     const skillsList = list2.map(item => ({
       imageUrl: item.image_url,
       name: item.name,
@@ -60,19 +81,95 @@ class JobsCard extends Component {
       companyLogoUrl: item.company_logo_url,
       employmentType: item.employment_type,
       id: item.id,
-      jobDescription: id.job_description,
+      jobDescription: item.job_description,
       location: item.location,
       rating: item.rating,
       title: item.title,
     }))
-    console.log(convertedJObDetails)
-    console.log(lifeAtCompanyList)
-    console.log(skillsList)
-    console.log(similarJobsList)
+
+    if (response.status === 200) {
+      this.setState({
+        convertedJObDetails,
+        lifeAtCompanyList,
+        skillsList,
+        similarJobsList,
+        load: false,
+      })
+    } else {
+      this.setState({onErr: true, load: false})
+    }
+  }
+
+  onDetails = () => {
+    const {
+      convertedJObDetails,
+      lifeAtCompanyList,
+      skillsList,
+      similarJobsList,
+      onErr,
+    } = this.state
+
+    if (onErr) {
+      return (
+        <div className="jobs-failure-container">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+            alt="failure view"
+            className="jos-failure-img"
+          />
+          <h1 className="jobs-failure-heading">Oops! Something Went Wrong</h1>
+          <p className="jobs-failure-para">
+            We cannot seem to find the page you are looking for.
+          </p>
+          <div>
+            <button
+              type="button"
+              className="jobs-failure-btn"
+              onClick={this.onagain}
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <>
+        <Header />
+        <div className="list-of-single-container">
+          <JobsCardDetails
+            list1={convertedJObDetails}
+            list2={lifeAtCompanyList}
+            list3={skillsList}
+          />
+          <h1 className="similar-heading">Similar Jobs</h1>
+          <ul className="silimar-job-list">
+            {similarJobsList.map(item => (
+              <SimilarJobs list={item} key={item.id} />
+            ))}
+          </ul>
+        </div>
+      </>
+    )
   }
 
   render() {
-    return <JobsCardDetails />
+    const {load} = this.state
+
+    return (
+      <>
+        {load ? (
+          <div className="loadd-contaier">
+            <div className="loader-container">
+              <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+            </div>
+          </div>
+        ) : (
+          this.onDetails()
+        )}
+      </>
+    )
   }
 }
 export default JobsCard
