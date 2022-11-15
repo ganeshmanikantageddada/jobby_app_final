@@ -4,6 +4,8 @@ import Cookies from 'js-cookie'
 
 import Loader from 'react-loader-spinner'
 
+import Header from '../Header/index'
+
 import './index.css'
 
 import JobsHeader from '../JobsHeader/index'
@@ -120,6 +122,8 @@ class Jobs extends Component {
     const styling = loader ? 'loader-container-1' : 'loader-container-2'
     return (
       <>
+        <Header />
+
         <div className="jobs-container">
           <div className="jobs-left-container">
             <JobsSideBar

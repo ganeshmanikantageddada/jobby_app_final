@@ -7,6 +7,9 @@
   cursor: pointer;
   text-decoration: none;
 }
+.link-route {
+  text-decoration: none;
+}
 .job-portal-logo-container {
   display: flex;
   align-items: center;

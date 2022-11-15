@@ -22,7 +22,7 @@ const JobsPortal = props => {
   } = list
 
   return (
-    <Link to={`/jobs/${id}`}>
+    <Link to={`/jobs/${id}`} className="link-route">
       <li className="job-portal-container">
         <div className="job-portal-logo-container">
           <img
